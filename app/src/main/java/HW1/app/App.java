@@ -22,8 +22,7 @@ import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
 import static HW1.utilities.StringUtils.join;
-import static HW1.utilities.StringUtils.split;
-import static HW1.app.MessageUtils.getMessage;
+import static HW1.utilities.StringUtils.split;;
 
 public class App {
     public static boolean search(ArrayList<Integer> array, int e) {
