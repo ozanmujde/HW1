@@ -114,7 +114,7 @@ public class App {
             str_result = vector_x.get(result)+", "+ vector_y.get(result) +", "+vector_z.get(result);
           }
           
-          
+
           Map<String, String> map = new HashMap<String, String>();
           map.put("result",str_result );
           return new ModelAndView(map, "compute.mustache");

@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/ozanmujde/HW1.svg?branch=main)](https://travis-ci.com/ozanmujde/HW1)
-#Biggest Norm Calculator
+
+# Biggest Norm Calculator
 
 This method takes 3 parameters: 
 
@@ -14,7 +15,7 @@ This method takes 3 parameters:
 * Every box must have same length.
 * Just Integers are valid. 
 * Negative Integers are also welcommed
- 
- #And there is my :gift: for you
+
+# And there is my :gift: for you
 
 https://blooming-taiga-69245.herokuapp.com/
