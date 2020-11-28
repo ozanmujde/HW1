@@ -42,8 +42,6 @@ public class App {
 
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        
-
         get("/", (req, res) -> "Hello, World");
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
