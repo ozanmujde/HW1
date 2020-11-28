@@ -35,3 +35,6 @@ application {
     mainClassName = 'HW1.app.App'
     mainClass = 'HW1.app.App'
 }
+task stage(dependsOn: ['shadowJar'])
+shadowJar.mustRunAfter clean
+
