@@ -5,7 +5,7 @@ package HW1.app;
 
 import HW1.list.LinkedList;
 
-import java.lang.System.Logger;
+
 import java.util.ArrayList;
 
 import static spark.Spark.get;
@@ -16,7 +16,7 @@ import static spark.Spark.port;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.LogManager;
+
 
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
@@ -37,12 +37,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Logger logger = LogManager.getLogger(App.class);
+        
         port(getHerokuAssignedPort());
 
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        logger.error("Current port number:" + port);
+        
 
         get("/", (req, res) -> "Hello, World");
         post("/compute", (req, res) -> {
