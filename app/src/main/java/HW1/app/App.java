@@ -44,7 +44,7 @@ public class App {
       if(vector_x.size() != vector_y.size() || vector_x.size()!=vector_z.size() || vector_x.size() == 0){
         return -1;
       }
-      for (int i = 0; i < vector_x.size() i++) {
+      for (int i = 0; i < vector_x.size();i++) {
         double norm = Math.pow(vector_x.get(i), 2) + Math.pow(vector_y.get(i), 2)+Math.pow(vector_z.get(i), 2);
         norm = Math.sqrt(norm);
         if (norm >= maxNorm){
@@ -60,31 +60,57 @@ public class App {
         port(getHerokuAssignedPort());
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        get("/", (req, res) -> "Hello, World");
+        get("/", (req, res) -> "Welcome to the game to play the game add /compute to the end of the link");
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
-
+          ////////x vector
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
+          java.util.ArrayList<Integer> vector_x = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-            inputList.add(value);
+            vector_x.add(value);
           }
           sc1.close();
-          System.out.println(inputList);
+          System.out.println(vector_x);
+
+          ////////y vector
+
+          String input2 = req.queryParams("input2");
+          java.util.Scanner sc2 = new java.util.Scanner(input2);
+          sc1.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<Integer> vector_y = new java.util.ArrayList<>();
+          while (sc1.hasNext())
+          {
+            int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+            vector_y.add(value);
+          }
+          sc2.close();
+          System.out.println(vector_y);
+
+          ////////z vector
+
+          String input3 = req.queryParams("input3");
+          java.util.Scanner sc3 = new java.util.Scanner(input3);
+          sc1.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<Integer> vector_z = new java.util.ArrayList<>();
+          while (sc1.hasNext())
+          {
+            int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            vector_z.add(value);
+          }
+          sc3.close();
+          System.out.println(vector_z);
 
 
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
-          int input2AsInt = Integer.parseInt(input2);
+          
+          int result = App.biggestNorm(vector_x,vector_y,vector_z);
 
-          boolean result = App.search(inputList, input2AsInt);
-
-          Map<String, Boolean> map = new HashMap<String, Boolean>();
-          map.put("result", result);
+          Map<String, String> map = new HashMap<String, String>();
+          map.put("result", vector_x.get(result)+" "+ vector_y.get(result) +" "+vector_z.get(result));
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
@@ -92,7 +118,7 @@ public class App {
         get("/compute",
             (rq, rs) -> {
               Map<String, String> map = new HashMap<String, String>();
-              map.put("result", "not computed yet!");
+              map.put("result is ", "not computed yet!");
               return new ModelAndView(map, "compute.mustache");
             },
             new MustacheTemplateEngine());
