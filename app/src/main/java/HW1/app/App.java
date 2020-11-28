@@ -5,7 +5,7 @@ package HW1.app;
 
 import HW1.list.LinkedList;
 
-import java.lang.System.Logger;
+
 import java.util.ArrayList;
 
 import static spark.Spark.get;
@@ -36,10 +36,8 @@ public class App {
       return false;
     }
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {    
         port(getHerokuAssignedPort());
-
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
         get("/", (req, res) -> "Hello, World");
