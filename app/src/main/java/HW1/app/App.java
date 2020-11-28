@@ -35,6 +35,26 @@ public class App {
       }
       return false;
     }
+    public static int biggestNorm(ArrayList<Integer> vector_x, ArrayList<Integer> vector_y, ArrayList<Integer> vector_z ){
+      double maxNorm = 0;
+      int maxIndex = -1;
+      if(vector_x == null || vector_y == null || vector_z == null){
+        return -1;
+      }
+      if(vector_x.size() != vector_y.size() || vector_x.size()!=vector_z.size() || vector_x.size() == 0){
+        return -1;
+      }
+      for (int i = 0; i < vector_x.size() i++) {
+        double norm = Math.pow(vector_x.get(i), 2) + Math.pow(vector_y.get(i), 2)+Math.pow(vector_z.get(i), 2);
+        norm = Math.sqrt(norm);
+        if (norm >= maxNorm){
+          maxNorm = norm;
+          maxIndex = i;
+        }
+      }
+
+      return maxIndex;
+    }
 
     public static void main(String[] args) {    
         port(getHerokuAssignedPort());
