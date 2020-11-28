@@ -108,9 +108,12 @@ public class App {
 
           
           int result = App.biggestNorm(vector_x,vector_y,vector_z);
-
+          String str_result = vector_x.get(result)+" "+ vector_y.get(result) +" "+vector_z.get(result);
+          if(result == -1){
+            str_result = "Wrong input :( read the rules";
+          }
           Map<String, String> map = new HashMap<String, String>();
-          map.put("result", vector_x.get(result)+" "+ vector_y.get(result) +" "+vector_z.get(result));
+          map.put("result",str_result );
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
