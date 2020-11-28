@@ -5,7 +5,7 @@ package HW1.app;
 
 import HW1.list.LinkedList;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import static HW1.utilities.StringUtils.join;
 import static HW1.utilities.StringUtils.split;
@@ -17,13 +17,14 @@ public class App {
         tokens = split(getMessage());
         System.out.println(join(tokens));
     }
-}
-public static boolean search(ArrayList<Integer> array, int e) {
-    System.out.println("inside search");
-    if (array == null) return false;
-
-    for (int elt : array) {
-      if (elt == e) return true;
+    public static boolean search(ArrayList<Integer> array, int e) {
+      System.out.println("inside search");
+      if (array == null) return false;
+  
+      for (int elt : array) {
+        if (elt == e) return true;
+      }
+      return false;
     }
-    return false;
-  }
+}
+
