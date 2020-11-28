@@ -107,10 +107,14 @@ public class App {
 
           
           int result = App.biggestNorm(vector_x,vector_y,vector_z);
-          String str_result = vector_x.get(result)+", "+ vector_y.get(result) +", "+vector_z.get(result);
+          String str_result = "";
           if(result == -1){
             str_result = "Wrong input :( read the rules";
+          }else{
+            str_result = vector_x.get(result)+", "+ vector_y.get(result) +", "+vector_z.get(result);
           }
+          
+          
           Map<String, String> map = new HashMap<String, String>();
           map.put("result",str_result );
           return new ModelAndView(map, "compute.mustache");

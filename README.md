@@ -1,4 +1,20 @@
 [![Build Status](https://travis-ci.com/ozanmujde/HW1.svg?branch=main)](https://travis-ci.com/ozanmujde/HW1)
+#Biggest Norm Calculator
 
-I' make a different way to calculate ebced and old system which is used by Arabs to represent strings and words to number but i change it to Latin alphabet 
+This method takes 3 parameters: 
+
+* ArrayList <Integer\> vector_x,
+* ArrayList <Integer\> vector_y,
+* ArrayList <Integer\> vector_z,
+* and Love <3.
+
+### How This Calculator Works
+
+* You will give 3 Dimension each dimension on one box.
+* Every box must have same length.
+* Just Integers are valid. 
+* Negative Integers are also welcommed
+ 
+ #And there is my :gift: for you
+
 https://blooming-taiga-69245.herokuapp.com/
