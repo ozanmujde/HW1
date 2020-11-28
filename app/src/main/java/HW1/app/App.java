@@ -59,7 +59,7 @@ public class App {
         port(getHerokuAssignedPort());
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
-        get("/", (req, res) -> "Welcome to the game to play the game add /compute to the end of the link");
+        get("/", (req, res) -> "Welcome to the calculator.To run the calculator add /compute to the end of the link");
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
@@ -80,9 +80,9 @@ public class App {
 
           String input2 = req.queryParams("input2");
           java.util.Scanner sc2 = new java.util.Scanner(input2);
-          sc1.useDelimiter("[;\r\n]+");
+          sc2.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> vector_y = new java.util.ArrayList<>();
-          while (sc1.hasNext())
+          while (sc2.hasNext())
           {
             int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
             vector_y.add(value);
@@ -94,9 +94,9 @@ public class App {
 
           String input3 = req.queryParams("input3");
           java.util.Scanner sc3 = new java.util.Scanner(input3);
-          sc1.useDelimiter("[;\r\n]+");
+          sc3.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> vector_z = new java.util.ArrayList<>();
-          while (sc1.hasNext())
+          while (sc3.hasNext())
           {
             int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
             vector_z.add(value);
@@ -107,7 +107,7 @@ public class App {
 
           
           int result = App.biggestNorm(vector_x,vector_y,vector_z);
-          String str_result = vector_x.get(result)+" "+ vector_y.get(result) +" "+vector_z.get(result);
+          String str_result = vector_x.get(result)+", "+ vector_y.get(result) +", "+vector_z.get(result);
           if(result == -1){
             str_result = "Wrong input :( read the rules";
           }
